@@ -14,3 +14,4 @@ bootstrap = Bootstrap(app)
 
 from app import views
 # from app import request
+from app import error
