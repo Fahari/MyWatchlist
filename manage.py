@@ -8,12 +8,11 @@ from  flask_migrate import Migrate, MigrateCommand
 app = create_app('development')
 
 migrate = Migrate(app,db)
-manager.add_command('db',MigrateCommand)
-
 manager = Manager(app)
+
+manager.add_command('db',MigrateCommand)
 manager.add_command('server',Server)
 
-manager.add_command('server',Server)
 @manager.command
 def test():
     """Run the unit tests."""
