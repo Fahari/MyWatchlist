@@ -3,8 +3,9 @@ from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..request import get_movies,get_movie,search_movie
 from ..models import Review,User
-from .forms import ReviewForm
+from .forms import ReviewForm,UpdateProfile
 from flask_login import login_required
+from .. import db
 # Review = reviews.Review
 
 # Views
@@ -35,7 +36,7 @@ def profile(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
-    
+
 
 @main.route('/movie/<int:id>')
 def movie(id):
